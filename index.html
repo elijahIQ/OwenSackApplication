@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stack Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div>
+      <h1>Stack Task Manager</h1>
+      <p>Manage tasks using the LIFO principle</p>
+    </div>
+    <span class="badge">STACK · LIFO</span>
+  </header>
+
+  <main class="container">
+
+    <section class="panel">
+      <h2>Add a task</h2>
+      <p class="muted">New tasks are pushed onto the top of the stack.</p>
+
+      <form id="taskForm">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Enter a task..."
+          maxlength="100"
+          required
+        >
+        <button type="submit" class="primary">Push Task</button>
+      </form>
+
+      <div class="actions">
+        <button id="popBtn" class="danger">Pop</button>
+        <button id="peekBtn" class="secondary">Peek</button>
+        <button id="clearBtn" class="secondary">Clear Stack</button>
+      </div>
+
+      <p id="message" class="message" role="status" aria-live="polite">
+        Add a task to get started.
+      </p>
+
+      <div class="stats">
+        <div>
+          <span class="muted">Stack size</span>
+          <strong id="stackSize">0</strong>
+        </div>
+        <div>
+          <span class="muted">Top task</span>
+          <strong id="topTask">Empty</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>Task Stack</h2>
+          <p class="muted">The newest task appears at the top.</p>
+        </div>
+        <span id="stackStatus" class="status">Empty</span>
+      </div>
+
+      <div id="stackDisplay" class="stack-display">
+        <div class="empty-state">
+          <span class="empty-icon">↓</span>
+          <p>Your stack is empty.</p>
+          <small>Add a task to see it here.</small>
+        </div>
+      </div>
+
+      <p class="stack-note">
+        TOP ↓ BOTTOM — Pop removes the top task first.
+      </p>
+    </section>
+
+    <section class="panel explanation">
+      <h2>How the stack works</h2>
+      <div class="concept">
+        <strong>Push</strong>
+        <span>Adds an item to the top.</span>
+      </div>
+      <div class="concept">
+        <strong>Pop</strong>
+        <span>Removes the top item.</span>
+      </div>
+      <div class="concept">
+        <strong>Peek</strong>
+        <span>Reads the top item without removing it.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Built with HTML, CSS and JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
